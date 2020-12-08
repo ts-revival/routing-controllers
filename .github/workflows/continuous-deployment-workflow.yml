@@ -12,12 +12,12 @@ jobs:
         with:
           registry-url: https://registry.npmjs.org
       - run: yarn install --frozen-lockfile --ignore-scripts
-      - run: yarn run prettier:check
-      - run: yarn run lint:check
-      - run: yarn run test:ci
-      - run: yarn run build:es2015
-      - run:  run build:cjs
-      - run: yarn run build:types
+      - run: yarn prettier:check
+      - run: yarn lint:check
+      - run: yarn test:ci
+      - run: yarn build:es2015
+      - run: yarn build:cjs
+      - run: yarn build:types
       - run: cp LICENSE build/LICENSE
       - run: cp README.md build/README.md
       - run: jq 'del(.devDependencies) | del(.scripts)' package.json > build/package.json
