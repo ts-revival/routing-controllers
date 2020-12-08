@@ -25,7 +25,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: yarn install --frozen-lockfile --ignore-scripts
       - run: yarn run test:ci
-      - run: yarn global add codecov && echo "::add-path::$(yarn global bin)"
+      - run: sudo yarn global add codecov
         if: ${{ matrix.node-version == '14.x' }}
       - run: codecov -f ./coverage/clover.xml -t ${{ secrets.CODECOV_TOKEN }} --commit=$GITHUB_SHA --branch=${GITHUB_REF##*/}
         if: ${{ matrix.node-version == '14.x' }}
