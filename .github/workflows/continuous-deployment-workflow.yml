@@ -11,7 +11,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           registry-url: https://registry.npmjs.org
-      - run: yarn ci --ignore-scripts
+      - run: yarn install --frozen-lockfile --ignore-scripts
       - run: yarn run prettier:check
       - run: yarn run lint:check
       - run: yarn run test:ci
