@@ -1,4 +1,4 @@
-import { ValidatorOptions } from 'class-validator';
+import { ValidatorOptions } from '@ts-revival/class-validator';
 import { ClassTransformOptions } from 'class-transformer';
 import { ParamType } from '../types/ParamType';
 

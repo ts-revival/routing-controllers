@@ -1,4 +1,4 @@
-import { ValidatorOptions } from 'class-validator';
+import { ValidatorOptions } from '@ts-revival/class-validator';
 import { ActionMetadata } from './ActionMetadata';
 import { ParamMetadataArgs } from './args/ParamMetadataArgs';
 import { ParamType } from './types/ParamType';

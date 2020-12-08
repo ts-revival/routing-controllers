@@ -1,6 +1,6 @@
 import { Expose } from 'class-transformer';
 import { defaultMetadataStorage } from 'class-transformer/storage';
-import { Length } from 'class-validator';
+import { Length } from '@ts-revival/class-validator';
 import { Server as HttpServer } from 'http';
 import HttpStatusCodes from 'http-status-codes';
 import qs from 'qs';
