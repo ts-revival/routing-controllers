@@ -23,7 +23,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - run: yarn ci --ignore-scripts
+      - run: yarn install --frozen-lockfile --ignore-scripts
       - run: yarn run test:ci
       - run: yarn install codecov -g
         if: ${{ matrix.node-version == '14.x' }}
@@ -35,7 +35,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
-      - run: yarn ci --ignore-scripts
+      - run: yarn install --frozen-lockfile --ignore-scripts
       - run: yarn run build:es2015
       - run: yarn run build:cjs
       - run: yarn run build:types
