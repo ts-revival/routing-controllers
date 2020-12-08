@@ -7,9 +7,9 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
-      - run: npm ci --ignore-scripts
-      - run: npm run prettier:check
-      - run: npm run lint:check
+      - run: yarn ci --ignore-scripts
+      - run: yarn run prettier:check
+      - run: yarn run lint:check
   tests:
     name: Tests
     runs-on: ubuntu-latest
@@ -23,9 +23,9 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm ci --ignore-scripts
-      - run: npm run test:ci
-      - run: npm install codecov -g
+      - run: yarn ci --ignore-scripts
+      - run: yarn run test:ci
+      - run: yarn install codecov -g
         if: ${{ matrix.node-version == '14.x' }}
       - run: codecov -f ./coverage/clover.xml -t ${{ secrets.CODECOV_TOKEN }} --commit=$GITHUB_SHA --branch=${GITHUB_REF##*/}
         if: ${{ matrix.node-version == '14.x' }}
@@ -35,7 +35,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
-      - run: npm ci --ignore-scripts
-      - run: npm run build:es2015
-      - run: npm run build:cjs
-      - run: npm run build:types
+      - run: yarn ci --ignore-scripts
+      - run: yarn run build:es2015
+      - run: yarn run build:cjs
+      - run: yarn run build:types

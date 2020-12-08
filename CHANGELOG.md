@@ -2,7 +2,7 @@
 
 ### 0.8.0 [BREAKING CHANGES]
 
-- [class-transformer](https://github.com/typestack/class-transformer) and [class-validator](https://github.com/typestack/class-validator) are now peer dependencies.
+- [class-transformer](https://github.com/ts-revival/class-transformer) and [class-validator](https://github.com/ts-revival/class-validator) are now peer dependencies.
 
 #### Features
 

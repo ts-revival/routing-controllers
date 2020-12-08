@@ -1,9 +1,9 @@
 # routing-controllers
 
-![Build Status](https://github.com/typestack/routing-controllers/workflows/CI/badge.svg)
-[![codecov](https://codecov.io/gh/typestack/routing-controllers/branch/develop/graph/badge.svg)](https://codecov.io/gh/typestack/routing-controllers)
+![Build Status](https://github.com/ts-revival/routing-controllers/workflows/CI/badge.svg)
+[![codecov](https://codecov.io/gh/ts-revival/routing-controllers/branch/develop/graph/badge.svg)](https://codecov.io/gh/ts-revival/routing-controllers)
 [![npm version](https://badge.fury.io/js/routing-controllers.svg)](https://badge.fury.io/js/routing-controllers)
-[![Dependency Status](https://david-dm.org/typestack/routing-controllers.svg)](https://david-dm.org/typestack/routing-controllers)
+[![Dependency Status](https://david-dm.org/ts-revival/routing-controllers.svg)](https://david-dm.org/ts-revival/routing-controllers)
 
 <center>
 <span>English</span> | 
@@ -88,6 +88,7 @@ You can use routing-controllers with [express.js][1] or [koa.js][2].
    and make sure to import it before you use routing-controllers:
 
    ```typescript
+
    ```
 
 3. Install framework:
@@ -608,7 +609,7 @@ You can use template to generate the Redirect header:
 @Redirect("http://github.com/:owner/:repo")
 getUsers() {
     return {
-        owner: "typestack",
+        owner: "ts-revival",
         repo: "routing-controllers"
     };
 }
@@ -1291,7 +1292,7 @@ export class UserController {
 ```
 
 If the param doesn't satisfy the requirements defined by class-validator decorators,
-an error will be thrown and captured by routing-controller, so the client will receive 400 Bad Request and JSON with nice detailed [Validation errors](https://github.com/typestack/class-validator#validation-errors) array.
+an error will be thrown and captured by routing-controller, so the client will receive 400 Bad Request and JSON with nice detailed [Validation errors](https://github.com/ts-revival/class-validator#validation-errors) array.
 
 If you need special options for validation (groups, skipping missing properties, etc.) or transforming (groups, excluding prefixes, versions, etc.), you can pass them as global config as `validation` in createExpressServer method or as a local `validate` setting for method parameter - `@Body({ validate: localOptions })`.
 
@@ -1380,7 +1381,7 @@ then routing-controllers will throw authorization required error.
 
 `routing-controllers` supports a DI container out of the box. You can inject your services into your controllers,
 middlewares and error handlers. Container must be setup during application bootstrap.
-Here is example how to integrate routing-controllers with [typedi](https://github.com/typestack/typedi):
+Here is example how to integrate routing-controllers with [typedi](https://github.com/ts-revival/typedi):
 
 ```typescript
 import { createExpressServer, useContainer } from 'routing-controllers';
@@ -1531,8 +1532,8 @@ export class QuestionController {
 #### Other Decorators
 
 | Signature                                                        | Example                                           | Description                                                                                                                                 |
-| ---------------------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| `@Authorized(roles?: string\|string[])`                          | `@Authorized("SUPER_ADMIN")` get()                | Checks if user is authorized and has given roles on a given route. `authorizationChecker` should be defined in routing-controllers options. |  |
+| ---------------------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | --- |
+| `@Authorized(roles?: string\|string[])`                          | `@Authorized("SUPER_ADMIN")` get()                | Checks if user is authorized and has given roles on a given route. `authorizationChecker` should be defined in routing-controllers options. |     |
 | `@CurrentUser(options?: { required?: boolean })`                 | get(@CurrentUser({ required: true }) user: User)  | Injects currently authorized user. `currentUserChecker` should be defined in routing-controllers options.                                   |
 | `@Header(headerName: string, headerValue: string)`               | `@Header("Cache-Control", "private")` get()       | Allows to explicitly set any HTTP header returned in the response.                                                                          |
 | `@ContentType(contentType: string)`                              | `@ContentType("text/csv")` get()                  | Allows to explicitly set HTTP Content-Type returned in the response.                                                                        |
@@ -1546,11 +1547,11 @@ export class QuestionController {
 
 ## Samples
 
-- Take a look on [routing-controllers with express](https://github.com/typestack/routing-controllers-express-demo) which is using routing-controllers.
-- Take a look on [routing-controllers with koa](https://github.com/typestack/routing-controllers-koa-demo) which is using routing-controllers.
-- Take a look on [routing-controllers with angular 2](https://github.com/typestack/routing-controllers-angular2-demo) which is using routing-controllers.
+- Take a look on [routing-controllers with express](https://github.com/ts-revival/routing-controllers-express-demo) which is using routing-controllers.
+- Take a look on [routing-controllers with koa](https://github.com/ts-revival/routing-controllers-koa-demo) which is using routing-controllers.
+- Take a look on [routing-controllers with angular 2](https://github.com/ts-revival/routing-controllers-angular2-demo) which is using routing-controllers.
 - Take a look on [node-microservice-demo](https://github.com/swimlane/node-microservice-demo) which is using routing-controllers.
-- Take a look on samples in [./sample](https://github.com/typestack/routing-controllers/tree/master/sample) for more examples
+- Take a look on samples in [./sample](https://github.com/ts-revival/routing-controllers/tree/master/sample) for more examples
   of usage.
 
 ## Release notes
@@ -1560,9 +1561,9 @@ See information about breaking changes and release notes [here](CHANGELOG.md).
 [1]: http://expressjs.com/
 [2]: http://koajs.com/
 [3]: https://github.com/expressjs/multer
-[4]: https://github.com/typestack/class-transformer
+[4]: https://github.com/ts-revival/class-transformer
 [5]: https://www.npmjs.com/package/express-session
 [6]: https://www.npmjs.com/package/koa-session
 [7]: https://www.npmjs.com/package/koa-generic-session
 [8]: http://koajs.com/#ctx-state
-[9]: https://github.com/typestack/class-validator
+[9]: https://github.com/ts-revival/class-validator
