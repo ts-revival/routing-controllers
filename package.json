@@ -1,9 +1,9 @@
 {
-  "name": "routing-controllers",
+  "name": "@ts-revival/routing-controllers",
   "private": false,
-  "version": "0.9.0-alpha.5",
+  "version": "0.10.0",
   "description": "Create structured, declarative and beautifully organized class-based controllers with heavy decorators usage for Express / Koa using TypeScript.",
-  "author": "TypeStack contributors",
+  "author": "ts-revival contributors",
   "license": "MIT",
   "sideEffects": false,
   "main": "./cjs/index.js",
@@ -12,7 +12,7 @@
   "typings": "./types/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/typestack/routing-controllers.git"
+    "url": "https://github.com/ts-revival/routing-controllers.git"
   },
   "tags": [
     "express",
@@ -24,7 +24,7 @@
     "controllers"
   ],
   "scripts": {
-    "build": "npm run build:cjs",
+    "build": "yarn run build:cjs",
     "build:clean": "rimraf build",
     "build:es2015": "tsc --project tsconfig.prod.esm2015.json",
     "build:cjs": "tsc --project tsconfig.prod.cjs.json",
@@ -48,9 +48,13 @@
   },
   "peerDependencies": {
     "class-transformer": "^0.3.1",
-    "class-validator": "^0.12.2"
+    "@ts-revival/class-validator": "^0.13.1"
+  },
+  "resolutions": {
+    "@ts-revival/class-validator": "^0.13.1"
   },
   "devDependencies": {
+    "@ts-revival/class-validator": "^0.13.1",
     "@types/express": "^4.17.6",
     "@types/express-session": "^1.17.0",
     "@types/form-data": "^2.5.0",
@@ -64,7 +68,6 @@
     "body-parser": "^1.19.0",
     "chakram": "^1.5.0",
     "class-transformer": "^0.3.1",
-    "class-validator": "^0.12.2",
     "cors": "^2.8.5",
     "eslint": "^7.6.0",
     "eslint-config-prettier": "^6.11.0",

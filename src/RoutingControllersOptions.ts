@@ -1,5 +1,5 @@
 import { ClassTransformOptions } from 'class-transformer';
-import { ValidatorOptions } from 'class-validator';
+import { ValidatorOptions } from '@ts-revival/class-validator';
 import { AuthorizationChecker } from './AuthorizationChecker';
 import { CurrentUserChecker } from './CurrentUserChecker';
 

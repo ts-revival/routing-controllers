@@ -1,5 +1,5 @@
 import { plainToClass } from 'class-transformer';
-import { validateOrReject as validate, ValidationError } from 'class-validator';
+import { validateOrReject as validate, ValidationError } from '@ts-revival/class-validator';
 import { Action } from './Action';
 import { BadRequestError } from './http-error/BadRequestError';
 import { BaseDriver } from './driver/BaseDriver';

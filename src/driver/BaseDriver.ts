@@ -1,4 +1,4 @@
-import { ValidatorOptions } from 'class-validator';
+import { ValidatorOptions } from '@ts-revival/class-validator';
 import { ClassTransformOptions, classToPlain } from 'class-transformer';
 
 import { HttpError } from '../http-error/HttpError';

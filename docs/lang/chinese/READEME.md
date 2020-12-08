@@ -1,13 +1,13 @@
 # routing-controllers
 
-[![Build Status](https://travis-ci.org/typestack/routing-controllers.svg?branch=master)](https://travis-ci.org/typestack/routing-controllers)
-[![codecov](https://codecov.io/gh/typestack/routing-controllers/branch/master/graph/badge.svg)](https://codecov.io/gh/typestack/routing-controllers)
+[![Build Status](https://travis-ci.org/ts-revival/routing-controllers.svg?branch=master)](https://travis-ci.org/ts-revival/routing-controllers)
+[![codecov](https://codecov.io/gh/ts-revival/routing-controllers/branch/master/graph/badge.svg)](https://codecov.io/gh/ts-revival/routing-controllers)
 [![npm version](https://badge.fury.io/js/routing-controllers.svg)](https://badge.fury.io/js/routing-controllers)
-[![Dependency Status](https://david-dm.org/typestack/routing-controllers.svg)](https://david-dm.org/typestack/routing-controllers)
-[![Join the chat at https://gitter.im/typestack/routing-controllers](https://badges.gitter.im/typestack/routing-controllers.svg)](https://gitter.im/typestack/routing-controllers?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Dependency Status](https://david-dm.org/ts-revival/routing-controllers.svg)](https://david-dm.org/ts-revival/routing-controllers)
+[![Join the chat at https://gitter.im/ts-revival/routing-controllers](https://badges.gitter.im/ts-revival/routing-controllers.svg)](https://gitter.im/ts-revival/routing-controllers?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 <center>
-<a href="https://github.com/typestack/routing-controllers#routing-controllers">English</a> | 
+<a href="https://github.com/ts-revival/routing-controllers#routing-controllers">English</a> | 
 <span>中文</span>
 </center>
 
@@ -87,6 +87,7 @@
    并确认在使用 routing-controllers 前引入
 
    ```typescript
+
    ```
 
 3. 安装框架：
@@ -944,23 +945,24 @@ app.listen(3000);
 
    第二种，声明一个类：
 
+   ```typescript
+   import { KoaMiddlewareInterface } from 'routing-controllers';
 
-    ```typescript
-    import { KoaMiddlewareInterface } from "routing-controllers";
+   export class MyMiddleware implements KoaMiddlewareInterface {
+     // 接口声明可选
 
-    export class MyMiddleware implements KoaMiddlewareInterface { // 接口声明可选
-
-        use(context: any, next: (err?: any) => Promise<any>): Promise<any> {
-            console.log("do something before execution...");
-            return next().then(() => {
-                console.log("do something after execution");
-            }).catch(error => {
-                console.log("error handling is also here");
-            });
-        }
-
-    }
-    ```
+     use(context: any, next: (err?: any) => Promise<any>): Promise<any> {
+       console.log('do something before execution...');
+       return next()
+         .then(() => {
+           console.log('do something after execution');
+         })
+         .catch(error => {
+           console.log('error handling is also here');
+         });
+     }
+   }
+   ```
 
 2. 应用：
 

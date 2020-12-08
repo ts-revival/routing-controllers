@@ -5,7 +5,7 @@ import { KoaDriver } from './driver/koa/KoaDriver';
 import { MetadataArgsStorage } from './metadata-builder/MetadataArgsStorage';
 import { RoutingControllers } from './RoutingControllers';
 import { RoutingControllersOptions } from './RoutingControllersOptions';
-import { ValidationOptions } from 'class-validator';
+import { ValidationOptions } from '@ts-revival/class-validator';
 import { importClassesFromDirectories } from './util/importClassesFromDirectories';
 
 // -------------------------------------------------------------------------

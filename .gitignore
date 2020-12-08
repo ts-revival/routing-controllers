@@ -1,3 +1,7 @@
+# Docker stuff
+.persist/
+.env
+
 # Log files
 logs
 *.log

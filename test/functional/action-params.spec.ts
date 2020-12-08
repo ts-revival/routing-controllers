@@ -1,5 +1,5 @@
 import bodyParser from 'body-parser';
-import { IsBoolean, IsString, MaxLength, Min, ValidateNested } from 'class-validator';
+import { IsBoolean, IsString, MaxLength, Min, ValidateNested } from '@ts-revival/class-validator';
 import express from 'express';
 import FormData from 'form-data';
 import fs from 'fs';
@@ -479,7 +479,7 @@ describe(``, () => {
   /*
   // This test currently fails with an ECONNRESET
   // See this Github issue:
-  // https://github.com/typestack/routing-controllers/issues/243
+  // https://github.com/ts-revival/routing-controllers/issues/243
   it("@Session(param) should throw required error when param is empty", () => {
       expect.assertions(1);
       const response = await axios.get("/session-param-empty-error", {
